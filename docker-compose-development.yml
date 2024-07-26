@@ -1,0 +1,17 @@
+services:
+  consumer:
+    image: consumer:latest
+    build:
+      context: .
+      dockerfile: dockerfile/Dockerfile-development
+    ports:
+      - 8888:8888
+    environment:
+      - PORT=8888
+      - NODE_ENV=development
+    restart: always
+    networks:
+      - kafka-network
+
+networks:
+  kafka-network:
