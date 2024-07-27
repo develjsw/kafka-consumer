@@ -4,10 +4,10 @@ import { KafkaConsumerService } from './kafka.consumer.service';
 
 @Controller('kafka')
 export class KafkaController {
-  constructor(private readonly kafkaConsumerService: KafkaConsumerService) {}
+    constructor(private readonly kafkaConsumerService: KafkaConsumerService) {}
 
-  @Post('consumer')
-  async consumer(@Body(new ValidationPipe()) consumerDto: ConsumerDto) {
-    await this.kafkaConsumerService.initializeConsumer(consumerDto.topics);
-  }
+    @Post('consumer')
+    async consumer(@Body(new ValidationPipe()) consumerDto: ConsumerDto) {
+        await this.kafkaConsumerService.initializeConsumer(consumerDto.topics);
+    }
 }
