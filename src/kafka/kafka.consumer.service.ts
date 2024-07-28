@@ -12,7 +12,7 @@ export class KafkaConsumerService {
         this.kafka = new Kafka({
             clientId: 'property-test',
             // TODO : 개발서버 아이피로 고정 설정, 환경변수로 개발/로컬/운영 나뉘어질 수 있도록 변경 필요
-            brokers: ['3.36.54.43:9094', '3.36.54.43:9095', '3.36.54.43:9096']
+            brokers: ['3.36.54.43:9095', '3.36.54.43:9096', '3.36.54.43:9097']
         });
 
         this.consumer = this.kafka.consumer({
